@@ -8,3 +8,5 @@ Then the kernel (and integral) is completely specified by a set of indices and c
 ### Requirements
 * numpy
 * scipy
+* pandas
+* h5py

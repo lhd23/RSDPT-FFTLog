@@ -3,7 +3,7 @@ A Python code for efficiently evaluating the redshift-space power spectrum model
 As a by-product, this code can also return the one-loop density and velocity divergence power spectra (from [Eulerian perturbation theory](https://arxiv.org/abs/astro-ph/0112551)).
 
 Functionality also exists for a user to supply their own one-loop integral to evaluate. To do this the kernel needs to be decomposed into FFTLog form (see appendix A in [arXiv:2105.12933](https://arxiv.org/abs/2105.12933) for an example on how to do this).
-Then the kernel (and integral) is completely specified by a set of indices and coefficients, which is to be inputted into the method `get_fftlog_param_dict`.
+The kernel, represented in FFTLog form by a set of indices and coefficients, can then be inputted into `get_fftlog_param_dict`.
 
 ### Requirements
 * numpy

@@ -16,7 +16,7 @@ OM0_P15 = 0.315
 GAMMA = 0.55 # growth index
 FGROWTH = OM0_P15**GAMMA
 
-from pars import get_fftlog_param_dict, test
+from pars import get_fftlog_param_dict
 
 # Note: theta is defined as \theta := (\nabla\cdot\v) / (-calH f)
 # 		i.e. we divide the conventional theta by -calH f

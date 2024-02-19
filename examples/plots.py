@@ -171,7 +171,7 @@ def plot_oneloop_theta():
 	ax.set_xticks([1e-3,1e-2,1e-1,1e0,1e1,1e2])
 	ax.set_xlabel(r'Wavenumber $k$ [h Mpc$^{-1}$]')
 	ax.set_ylabel(r'$P_{\theta\theta}(k)$ [h$^{-3}$ Mpc$^3$]')
-	plt.savefig('Ptheta.png',dpi=300)
+	plt.savefig('Ptheta.png')
 	# plt.show()
 
 
@@ -199,8 +199,8 @@ def plot_oneloop_matter():
 	ax.set_xlabel(r'Wavenumber $k$ [h Mpc$^{-1}$]')
 	ax.set_ylabel(r'$P_{mm}(k)$ [h$^{-3}$ Mpc$^3$]')
 	ax.set_ylabel(r'$P_{mm}(k)$ [h$^{-3}$ Mpc$^3$]')
-	# plt.savefig('Pmm.png',dpi=300)
-	plt.show()
+	plt.savefig('Pmm.png',bbox_inches='tight')
+	# plt.show()
 
 def plot_Ps_vv_with_ratio(N=512): # P(k,mu) for diff mu
 	H0f = 51.57 # Om^0.55=0.3^0.55=0.5157

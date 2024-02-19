@@ -2,6 +2,7 @@ from __future__ import print_function
 import sys
 import os
 dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append("../")
 
 from FFTLog_integrals import *
 import power_FFTLog as power
@@ -12,6 +13,8 @@ from scipy.integrate import quad
 
 import matplotlib.pyplot as plt
 import matplotlib as mpl
+mpl.rcParams['xtick.direction'] = 'in'
+mpl.rcParams['ytick.direction'] = 'in'
 import matplotlib.ticker
 locmin = matplotlib.ticker.LogLocator(base=10.0, subs=np.arange(2, 10) * .1, numticks=100)
 
@@ -168,7 +171,9 @@ def plot_oneloop_theta():
 	ax.set_xticks([1e-3,1e-2,1e-1,1e0,1e1,1e2])
 	ax.set_xlabel(r'Wavenumber $k$ [h Mpc$^{-1}$]')
 	ax.set_ylabel(r'$P_{\theta\theta}(k)$ [h$^{-3}$ Mpc$^3$]')
-	plt.show()
+	plt.savefig('Ptheta.png',dpi=300)
+	# plt.show()
+
 
 def plot_oneloop_matter():
 	k, PL, P13, P22, P_1loop = power.Pmm_1loop(k=None, PL=None, get_compts=True, N=1024)
@@ -193,6 +198,8 @@ def plot_oneloop_matter():
 	ax.set_xticks([1e-3,1e-2,1e-1,1e0,1e1,1e2])
 	ax.set_xlabel(r'Wavenumber $k$ [h Mpc$^{-1}$]')
 	ax.set_ylabel(r'$P_{mm}(k)$ [h$^{-3}$ Mpc$^3$]')
+	ax.set_ylabel(r'$P_{mm}(k)$ [h$^{-3}$ Mpc$^3$]')
+	# plt.savefig('Pmm.png',dpi=300)
 	plt.show()
 
 def plot_Ps_vv_with_ratio(N=512): # P(k,mu) for diff mu
@@ -569,7 +576,8 @@ def plot_Pvv_cumexp_ratio_disp(N=1024):
 	ax[0].yaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
 	plt.show()
 
-
-plot_oneloop_theta()
+if __name__ == '__main__':
+	plot_oneloop_matter()
+	#plot_oneloop_theta()
 
 
